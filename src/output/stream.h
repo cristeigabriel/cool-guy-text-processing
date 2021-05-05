@@ -77,16 +77,16 @@ namespace Stream
 			class IAppend : public CBaseAppend
 			{
 				public:
-				static std::shared_ptr<IAppend> make( const char *name )
+				static std::unique_ptr<IAppend> make( const char *name )
 				{
-					std::shared_ptr<IAppend> ret = std::make_shared<IAppend>();
+					std::unique_ptr<IAppend> ret = std::make_unique<IAppend>();
 					ret.get()->initialize( name );
 					return ret;
 				}
 
-				static std::shared_ptr<IAppend> make( const char *name, const char *value )
+				static std::unique_ptr<IAppend> make( const char *name, const char *value )
 				{
-					std::shared_ptr<IAppend> ret = std::make_shared<IAppend>();
+					std::unique_ptr<IAppend> ret = std::make_unique<IAppend>();
 					ret.get()->initialize( name, value );
 					return ret;
 				}
@@ -165,16 +165,16 @@ namespace Stream
 			class IAppend : public CBaseAppend
 			{
 				public:
-				static std::shared_ptr<IAppend> make( const char *name )
+				static std::unique_ptr<IAppend> make( const char *name )
 				{
-					std::shared_ptr<IAppend> ret = std::make_shared<IAppend>();
+					std::unique_ptr<IAppend> ret = std::make_unique<IAppend>();
 					ret.get()->initialize( name );
 					return ret;
 				}
 
-				static std::shared_ptr<IAppend> make( const char *name, const char *value )
+				static std::unique_ptr<IAppend> make( const char *name, const char *value )
 				{
-					std::shared_ptr<IAppend> ret = std::make_shared<IAppend>();
+					std::unique_ptr<IAppend> ret = std::make_unique<IAppend>();
 					ret.get()->initialize( name, value );
 					return ret;
 				}
@@ -357,7 +357,7 @@ namespace Stream
 			m_stream << '\n';
 		}
 
-		inline void append( std::shared_ptr<Append::CBaseAppend> ptr )
+		inline void append( std::unique_ptr<Append::CBaseAppend> ptr )
 		{
 			ptr.get()->append( m_stream, m_current_enclosure_counter );
 		}
