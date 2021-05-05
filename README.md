@@ -12,8 +12,11 @@ To avoid useless overhead, the project allows for the creation of illegal expres
 
 Limitations are to be, in the future, if needed, handled as logical errors, so this *might* break compability with some code, if you're generating illegal expressions/code.
 
+# Examples of implementation/initialization
+Check the "main.cpp" file in the "src" folder.
+
 # Examples of usage
-Check the "output" file.
+Check the "output" folder.
 
 # Support
 The project has custom implementations of text processing for the C and C++ language, the ones being officially supported.
